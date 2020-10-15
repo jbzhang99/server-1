@@ -166,7 +166,6 @@ class SCSSCacher {
 			while ($retry < 10) {
 				if (!$this->variablesChanged() && $this->isCached($fileNameCSS, $app)) {
 					// Inject icons vars css if any
-					$this->lockingCache->remove($lockKey);
 					$this->logger->debug('SCSSCacher: ' .$lockKey.' is now available after '.$retry.'s. Moving on...', ['app' => 'core']);
 					return $this->injectCssVariablesIfAny();
 				}
